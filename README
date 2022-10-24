@@ -1,11 +1,6 @@
-#Copyright Nioata Alexandra 312CAa 2022
+Library Database
 
-Name: Nioata Alexandra
-Class: 312CA
-
-Homework 2 - The library of Hashbabel
-
-What I've learned from this homework:
+What I've learned from this project:
 - how a hashtable works
 - how to use a hashtable
 - more about generic data structures
@@ -91,13 +86,3 @@ Name:book_name Rating:book_rating Purchase:book_purchases, which is used to prin
 - the banned users are not shown
 - frees the 2 hashtables
 
-My thoughts about this homework:
-- it was a bit challenging and because I had some personal issues and the timing wasn't right, I couldn't finished it, but the most important thing is the fact that I finally understood hashtables and how they work
-- even though I didn't implement it, I have some ideas of how I would have done the resize function:
- - hmax = 10;
- - I keep the track of the added hashtables for every hashtable I have in the program
- - each time I need to add a new hashtable I verify if the size is bigger than hmax
- - if it is, I use the resize function
- - in the resize function, I will make a linked list in which I will add every bucket
- - then I will make hmax bigger (2 * hmax)
- - I will create a new hashtable and I will put the elements of the list in it
