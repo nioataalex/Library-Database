@@ -1,0 +1,103 @@
+#Copyright Nioata Alexandra 312CAa 2022
+
+Name: Nioata Alexandra
+Class: 312CA
+
+Homework 2 - The library of Hashbabel
+
+What I've learned from this homework:
+- how a hashtable works
+- how to use a hashtable
+- more about generic data structures
+- how to make a hashtable in a hashtable
+
+First of all, the problem starts with reading an action. After this,
+each action will be solved. Also, I used c files and headers with
+suggestive names.(main.c,,functions.c etc.)
+Each function is explained in the program.
+
+I will explain each action now:
+
+1. ADD_BOOK
+- adds a book to the hashtable library
+- if the added book name already exists it will be updated
+- it is given a number of pairs, with key and value for a definition
+- they will be added in the book, which is a hastable too
+
+2. GET_BOOK
+- prints the book with the given name
+- if the book does not exists, a message will be printed: “The book is not in the library.”
+- the print has a given format: 
+Name:book_name Rating:book_rating Purchase:book_purchases, which is used to print all books too
+
+3. RMV_BOOK 
+- remove the book with the given name from the hashtable called library
+- if the book does not exists, a message will be printed: “The book is not in the library.”
+
+4. ADD_DEF
+- adds a given definition to a book
+- if the book does not exists, a message will be printed: “The book is not in the library.”
+- if the books exists, it will be searched in the library hashtable and the definition will be added
+
+5. GET_DEF
+- gets a given definition to a book
+- if the book does not exists, a message will be printed: “The book is not in the library.”
+- if the definition does not exists, a message wiil be printed: “The definition is not in the book.”
+- finds the book in the hashtable library, then finds the defintion in the book hashtable and prints it
+
+6. RMV_DEF
+- removes a given definition from a given book
+- if the book does not exists, a message will be printed: “The book is not in the library.”
+- if the definition does not exists, a message wiil be printed: “The definition is not in the book.”
+- finds the book in the hashtable library, then finds the defintion in the book hashtable and removes it
+
+7. ADD_USER
+- add a new user in the the users hashtable
+- if the user already exists, this message will be printed: “User is already registered.”
+- the users gets 100 points
+
+8. BORROW 
+- a users borrows a book from the library
+- if the user does not exists, this message printed “You are not registered yet.”
+- if the user is banned (has less than zero points), this message is printed “You are banned from this library.”
+- if the book is not in the library, this message is printed  “The book is not in the library.” 
+- if the book is already borrowd by someone else, this message is printed “The book is borrowed.”
+- if the user already borrowed a book, this message is printed “You have already borrowed a book.”
+- the book is not deleted, but it will be marked as borrowed
+- the user has a number of days, after them the books needs to be returned
+
+9. RETURN
+- returns the borrowed book with a rating
+- the rating will be added at the rating of the book
+- the purchase will grow with 1 
+- if the user is banned, this message is printed “You are banned from this library.”
+- if the user wants to return another book, this message is printed “You didn't borrow this book.”.
+- if the user wants to return a book, but he doesn't have one, this meesage is printed “You didn't borrow this book.”
+- also from stdin is given the days since the book is borrowed
+- if the user is late, he will lost 2 * number of late days points
+- if the user is not late, he will achieve a point/day.
+- the book will be unmarked as borrowed
+
+10. LOST
+- the user will lost 50 points
+- the book is lost, so it will be deleted from the library hashtable
+- if the points is less than zero, this message is printed “The user <user_name> has been banned.”
+- if the user does not exists, this message is printed “You are not registered yet.”
+- if the user is banned, this message is printed “You are banned from this library.”
+
+11. EXIT
+- prints all books and users in a certain format
+- the books and the users are sorted
+- the banned users are not shown
+- frees the 2 hashtables
+
+My thoughts about this homework:
+- it was a bit challenging and because I had some personal issues and the timing wasn't right, I couldn't finished it, but the most important thing is the fact that I finally understood hashtables and how they work
+- even though I didn't implement it, I have some ideas of how I would have done the resize function:
+ - hmax = 10;
+ - I keep the track of the added hashtables for every hashtable I have in the program
+ - each time I need to add a new hashtable I verify if the size is bigger than hmax
+ - if it is, I use the resize function
+ - in the resize function, I will make a linked list in which I will add every bucket
+ - then I will make hmax bigger (2 * hmax)
+ - I will create a new hashtable and I will put the elements of the list in it
